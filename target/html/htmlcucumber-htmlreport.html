@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.9.1"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"11.0.12+8-LTS-237"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1657613058","nanos":473783600}}},{"source":{"uri":"file:///E:/Meaven%20Projects/em2m/src/test/resources/features/A_LoginPage.feature","data":"@LoginPage\r\nFeature: Login Page Test \r\n\tIn order to test functionality of Login page\r\n\tWe will test different combination of credentials to test the login functionality\r\n\r\n\r\n@LoginPage_LoginPageLoad\r\nScenario: Scenario_01 Wait for login page to Load Successfully\r\n\tGiven Launch the URL do the necessary initializations\r\n\tThen Verify User is on login page\r\n\r\n@LoginPage_LoginPage_InvalidCredentials\r\nScenario: Scenario_02 Verify the un successful login with invalid credentials\r\n\tGiven Verify User is on login page\r\n\tWhen We are on login page and we use invalid username and password for login\r\n\t\t| username \t\t\t| password               |\r\n\t\t| invalidUsername\t| invalidPassword\t     |\r\n\tThen Verify the login error message \"Invalid username or password. Please try again.\"\r\n\r\n@LoginPage_LoginPageSuccessfulLogin\r\nScenario: Scenario_03 Verify the successful login with valid credentials\r\n\tGiven Verify User is on login page\r\n\tWhen We are on login page and we use valid username and password for login\r\n\t\t| username \t\t\t\t\t            | password      |\r\n\t\t| divya.bika@faberwork.com          \t| Testfaber123!\t|\r\n\tThen Verify the user is successfully logged in\r\n\tThen Logout\r\n\t\r\n\t\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///E:/Meaven%20Projects/em2m/src/test/resources/features/A_LoginPage.feature","feature":{"location":{"line":2,"column":1},"tags":[{"location":{"line":1,"column":1},"name":"@LoginPage","id":"97ba104d-43c9-450c-8fff-63b0bd9f7dda"}],"language":"en","keyword":"Feature","name":"Login Page Test","description":"\tIn order to test functionality of Login page\n\tWe will test different combination of credentials to test the login functionality","children":[{"scenario":{"location":{"line":8,"column":1},"tags":[{"location":{"line":7,"column":1},"name":"@LoginPage_LoginPageLoad","id":"1735e962-5002-420b-86b6-5bc62da105ad"}],"keyword":"Scenario","name":"Scenario_01 Wait for login page to Load Successfully","steps":[{"location":{"line":9,"column":2},"keyword":"Given ","text":"Launch the URL do the necessary initializations","id":"acd2ef31-2d5e-4023-9f78-37b599f56eb4"},{"location":{"line":10,"column":2},"keyword":"Then ","text":"Verify User is on login page","id":"e373c18a-bf0f-40f2-bb7b-4da9f15e470c"}],"id":"9c814bf2-b9d1-4508-bbbc-58f0f7fd0574"}},{"scenario":{"location":{"line":13,"column":1},"tags":[{"location":{"line":12,"column":1},"name":"@LoginPage_LoginPage_InvalidCredentials","id":"2584fd20-5294-44a9-9fe1-480073ff66bc"}],"keyword":"Scenario","name":"Scenario_02 Verify the un successful login with invalid credentials","steps":[{"location":{"line":14,"column":2},"keyword":"Given ","text":"Verify User is on login page","id":"b04f83db-8977-46e9-a016-bb853aec1945"},{"location":{"line":15,"column":2},"keyword":"When ","text":"We are on login page and we use invalid username and password for login","dataTable":{"location":{"line":16,"column":3},"rows":[{"location":{"line":16,"column":3},"cells":[{"location":{"line":16,"column":5},"value":"username"},{"location":{"line":16,"column":19},"value":"password"}],"id":"7fb08192-7b38-4d09-a8f9-34b57f83b4e0"},{"location":{"line":17,"column":3},"cells":[{"location":{"line":17,"column":5},"value":"invalidUsername"},{"location":{"line":17,"column":23},"value":"invalidPassword"}],"id":"86f657ba-7557-4436-8e8b-5186aca1988d"}]},"id":"9732e9ad-d86f-4569-ae87-185a078b4609"},{"location":{"line":18,"column":2},"keyword":"Then ","text":"Verify the login error message \"Invalid username or password. Please try again.\"","id":"09dab689-ac1e-450c-b8ea-67c018347956"}],"id":"f7f3a632-a979-4122-9989-8e708f2db97a"}},{"scenario":{"location":{"line":21,"column":1},"tags":[{"location":{"line":20,"column":1},"name":"@LoginPage_LoginPageSuccessfulLogin","id":"356d78b4-7535-4c41-a465-d1f97222c4fa"}],"keyword":"Scenario","name":"Scenario_03 Verify the successful login with valid credentials","steps":[{"location":{"line":22,"column":2},"keyword":"Given ","text":"Verify User is on login page","id":"2706e76e-4c5b-4938-b2ef-6af7d0a23e8f"},{"location":{"line":23,"column":2},"keyword":"When ","text":"We are on login page and we use valid username and password for login","dataTable":{"location":{"line":24,"column":3},"rows":[{"location":{"line":24,"column":3},"cells":[{"location":{"line":24,"column":5},"value":"username"},{"location":{"line":24,"column":33},"value":"password"}],"id":"0f912bbb-e99d-4859-b071-3db444593d85"},{"location":{"line":25,"column":3},"cells":[{"location":{"line":25,"column":5},"value":"divya.bika@faberwork.com"},{"location":{"line":25,"column":42},"value":"Testfaber123!"}],"id":"b106792c-dec3-4078-8ffa-937b1630e3df"}]},"id":"59c78e03-cf6e-46d5-a727-37019a78d537"},{"location":{"line":26,"column":2},"keyword":"Then ","text":"Verify the user is successfully logged in","id":"a016c53d-9fb8-48f6-baa6-0ce949fef22e"},{"location":{"line":27,"column":2},"keyword":"Then ","text":"Logout","id":"873185ea-fdbe-4354-88f5-5275322a8496"}],"id":"fc476f8a-a7eb-4e2c-ad47-170d2c30517b"}}]}}},{"pickle":{"id":"cf4fbf2c-eabc-46de-8d09-451eaccd4458","uri":"file:///E:/Meaven%20Projects/em2m/src/test/resources/features/A_LoginPage.feature","name":"Scenario_01 Wait for login page to Load Successfully","language":"en","steps":[{"text":"Launch the URL do the necessary initializations","id":"5bd31d4a-c3f3-4c0f-9e6e-dee398c62037","astNodeIds":["acd2ef31-2d5e-4023-9f78-37b599f56eb4"]},{"text":"Verify User is on login page","id":"c3134297-937e-4d52-b77e-191d9253330d","astNodeIds":["e373c18a-bf0f-40f2-bb7b-4da9f15e470c"]}],"tags":[{"name":"@LoginPage","astNodeId":"97ba104d-43c9-450c-8fff-63b0bd9f7dda"},{"name":"@LoginPage_LoginPageLoad","astNodeId":"1735e962-5002-420b-86b6-5bc62da105ad"}],"astNodeIds":["9c814bf2-b9d1-4508-bbbc-58f0f7fd0574"]}},{"pickle":{"id":"bf1d42a5-be9a-4e72-965a-f71d8db41a45","uri":"file:///E:/Meaven%20Projects/em2m/src/test/resources/features/A_LoginPage.feature","name":"Scenario_02 Verify the un successful login with invalid credentials","language":"en","steps":[{"text":"Verify User is on login page","id":"a26e27f9-7585-4eab-a27f-4518964163f5","astNodeIds":["b04f83db-8977-46e9-a016-bb853aec1945"]},{"text":"We are on login page and we use invalid username and password for login","argument":{"dataTable":{"rows":[{"cells":[{"value":"username"},{"value":"password"}]},{"cells":[{"value":"invalidUsername"},{"value":"invalidPassword"}]}]}},"id":"cc9da356-1d32-4120-a19e-732a9e6bd36b","astNodeIds":["9732e9ad-d86f-4569-ae87-185a078b4609"]},{"text":"Verify the login error message \"Invalid username or password. Please try again.\"","id":"632fe4e2-9595-40bd-898e-2f664c7a8729","astNodeIds":["09dab689-ac1e-450c-b8ea-67c018347956"]}],"tags":[{"name":"@LoginPage","astNodeId":"97ba104d-43c9-450c-8fff-63b0bd9f7dda"},{"name":"@LoginPage_LoginPage_InvalidCredentials","astNodeId":"2584fd20-5294-44a9-9fe1-480073ff66bc"}],"astNodeIds":["f7f3a632-a979-4122-9989-8e708f2db97a"]}},{"pickle":{"id":"c8a6b9b6-fb96-4e21-b493-3959dafe0a60","uri":"file:///E:/Meaven%20Projects/em2m/src/test/resources/features/A_LoginPage.feature","name":"Scenario_03 Verify the successful login with valid credentials","language":"en","steps":[{"text":"Verify User is on login page","id":"11f419a2-a8e2-4c78-af11-5a4d7611894f","astNodeIds":["2706e76e-4c5b-4938-b2ef-6af7d0a23e8f"]},{"text":"We are on login page and we use valid username and password for login","argument":{"dataTable":{"rows":[{"cells":[{"value":"username"},{"value":"password"}]},{"cells":[{"value":"divya.bika@faberwork.com"},{"value":"Testfaber123!"}]}]}},"id":"6c5d4713-65ad-4679-a05c-aa5d6a1f394f","astNodeIds":["59c78e03-cf6e-46d5-a727-37019a78d537"]},{"text":"Verify the user is successfully logged in","id":"9ce66f1a-4966-4fce-a714-e2f83e55d1e4","astNodeIds":["a016c53d-9fb8-48f6-baa6-0ce949fef22e"]},{"text":"Logout","id":"7135e8c7-9d56-40c2-8e2d-d7c5db270012","astNodeIds":["873185ea-fdbe-4354-88f5-5275322a8496"]}],"tags":[{"name":"@LoginPage","astNodeId":"97ba104d-43c9-450c-8fff-63b0bd9f7dda"},{"name":"@LoginPage_LoginPageSuccessfulLogin","astNodeId":"356d78b4-7535-4c41-a465-d1f97222c4fa"}],"astNodeIds":["fc476f8a-a7eb-4e2c-ad47-170d2c30517b"]}},{"source":{"uri":"file:///E:/Meaven%20Projects/em2m/src/test/resources/features/B_HomePage.feature","data":"@HomePage\r\nFeature: Home Page Test\r\n  In order to test functionality of home page\r\n  We will verify different cards on the home page to check home page functionality\r\n\r\nBackground: Launch the URL do the necessary initializations and login\r\n  Given Launch the URL do the necessary initializations\r\n\r\n@HomePage_ModuleCardsLoad\r\nScenario: Scenario_01 Verify all tabs are visible on the home page\r\n  Given Verify User is on login page\r\n  And User attempt to login\r\n  Then Verify the user is successfully logged in\r\n  When User is navigating to the root page\r\n  Then Verify the below tabs are visible\r\n  |Overview|Payment Assurance|Inventory Management|Sales|Maintenance|\r\n  Then Verify the below cards are visible\r\n  |Loans|Assets|Media|Recovery Orders|Vehicles|Geofences|Devices|Organizations|Accounts|Dashboards|Reports|Alerts|\r\n  And Click on hamburger button\r\n  Then Verify the hamburger elements visibility\r\n  |Loans|Recovery Orders|Vehicles|Media|Geofences|Reports|Installer Forms|Analytics|Alerts|Datasets|Dashboard|Accounts|Devices|Sims|Organizations|Settings|Batches|Sales Orders|Automations|Brands|Entries|\r\n  Then Logout","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///E:/Meaven%20Projects/em2m/src/test/resources/features/B_HomePage.feature","feature":{"location":{"line":2,"column":1},"tags":[{"location":{"line":1,"column":1},"name":"@HomePage","id":"5e2fd32f-58ff-4807-b2fb-81550d2b6ea5"}],"language":"en","keyword":"Feature","name":"Home Page Test","description":"  In order to test functionality of home page\n  We will verify different cards on the home page to check home page functionality","children":[{"background":{"location":{"line":6,"column":1},"keyword":"Background","name":"Launch the URL do the necessary initializations and login","steps":[{"location":{"line":7,"column":3},"keyword":"Given ","text":"Launch the URL do the necessary initializations","id":"6975dd25-de1e-4694-8026-972897532be2"}],"id":"831dedb5-6d69-4029-9791-25b986dce155"}},{"scenario":{"location":{"line":10,"column":1},"tags":[{"location":{"line":9,"column":1},"name":"@HomePage_ModuleCardsLoad","id":"f317f4ab-3723-4f07-99ff-1d985833ef48"}],"keyword":"Scenario","name":"Scenario_01 Verify all tabs are visible on the home page","steps":[{"location":{"line":11,"column":3},"keyword":"Given ","text":"Verify User is on login page","id":"6556f358-347f-4879-9a19-129f86be36b9"},{"location":{"line":12,"column":3},"keyword":"And ","text":"User attempt to login","id":"068e0a10-8e1f-476f-9a02-daf2f32d2876"},{"location":{"line":13,"column":3},"keyword":"Then ","text":"Verify the user is successfully logged in","id":"e787a0c2-e896-4b86-8978-41cba1ea2361"},{"location":{"line":14,"column":3},"keyword":"When ","text":"User is navigating to the root page","id":"3a7248ce-88b5-4c78-be99-50c6e0b0f128"},{"location":{"line":15,"column":3},"keyword":"Then ","text":"Verify the below tabs are visible","dataTable":{"location":{"line":16,"column":3},"rows":[{"location":{"line":16,"column":3},"cells":[{"location":{"line":16,"column":4},"value":"Overview"},{"location":{"line":16,"column":13},"value":"Payment Assurance"},{"location":{"line":16,"column":31},"value":"Inventory Management"},{"location":{"line":16,"column":52},"value":"Sales"},{"location":{"line":16,"column":58},"value":"Maintenance"}],"id":"46f28720-44a0-417b-a171-384105326f12"}]},"id":"1dc6ee65-96a2-4f2f-9167-d43c8787f29b"},{"location":{"line":17,"column":3},"keyword":"Then ","text":"Verify the below cards are visible","dataTable":{"location":{"line":18,"column":3},"rows":[{"location":{"line":18,"column":3},"cells":[{"location":{"line":18,"column":4},"value":"Loans"},{"location":{"line":18,"column":10},"value":"Assets"},{"location":{"line":18,"column":17},"value":"Media"},{"location":{"line":18,"column":23},"value":"Recovery Orders"},{"location":{"line":18,"column":39},"value":"Vehicles"},{"location":{"line":18,"column":48},"value":"Geofences"},{"location":{"line":18,"column":58},"value":"Devices"},{"location":{"line":18,"column":66},"value":"Organizations"},{"location":{"line":18,"column":80},"value":"Accounts"},{"location":{"line":18,"column":89},"value":"Dashboards"},{"location":{"line":18,"column":100},"value":"Reports"},{"location":{"line":18,"column":108},"value":"Alerts"}],"id":"decd2d45-da48-463f-a552-8a4dc24fd6ce"}]},"id":"c8b411d6-9df3-4f47-80f1-869d7c180c06"},{"location":{"line":19,"column":3},"keyword":"And ","text":"Click on hamburger button","id":"e6021f02-d409-4a41-b910-155892d8c66b"},{"location":{"line":20,"column":3},"keyword":"Then ","text":"Verify the hamburger elements visibility","dataTable":{"location":{"line":21,"column":3},"rows":[{"location":{"line":21,"column":3},"cells":[{"location":{"line":21,"column":4},"value":"Loans"},{"location":{"line":21,"column":10},"value":"Recovery Orders"},{"location":{"line":21,"column":26},"value":"Vehicles"},{"location":{"line":21,"column":35},"value":"Media"},{"location":{"line":21,"column":41},"value":"Geofences"},{"location":{"line":21,"column":51},"value":"Reports"},{"location":{"line":21,"column":59},"value":"Installer Forms"},{"location":{"line":21,"column":75},"value":"Analytics"},{"location":{"line":21,"column":85},"value":"Alerts"},{"location":{"line":21,"column":92},"value":"Datasets"},{"location":{"line":21,"column":101},"value":"Dashboard"},{"location":{"line":21,"column":111},"value":"Accounts"},{"location":{"line":21,"column":120},"value":"Devices"},{"location":{"line":21,"column":128},"value":"Sims"},{"location":{"line":21,"column":133},"value":"Organizations"},{"location":{"line":21,"column":147},"value":"Settings"},{"location":{"line":21,"column":156},"value":"Batches"},{"location":{"line":21,"column":164},"value":"Sales Orders"},{"location":{"line":21,"column":177},"value":"Automations"},{"location":{"line":21,"column":189},"value":"Brands"},{"location":{"line":21,"column":196},"value":"Entries"}],"id":"4dd069f8-d1c6-4e0e-94c6-03e56c5cfd44"}]},"id":"17c3b816-dea1-4812-a227-afc8da814595"},{"location":{"line":22,"column":3},"keyword":"Then ","text":"Logout","id":"e195a66a-bd4a-4760-a67b-1f8ba3ed248c"}],"id":"a67d0986-51c0-4755-90d5-bb6db36fa55e"}}]}}},{"pickle":{"id":"24d063e9-007e-41f2-b936-e872ab591395","uri":"file:///E:/Meaven%20Projects/em2m/src/test/resources/features/B_HomePage.feature","name":"Scenario_01 Verify all tabs are visible on the home page","language":"en","steps":[{"text":"Launch the URL do the necessary initializations","id":"b87be449-e2b1-44d8-9b70-bd6074c1506d","astNodeIds":["6975dd25-de1e-4694-8026-972897532be2"]},{"text":"Verify User is on login page","id":"fc5262d5-82d6-4d9e-810b-b88c11db2170","astNodeIds":["6556f358-347f-4879-9a19-129f86be36b9"]},{"text":"User attempt to login","id":"ee0c8c46-5806-4314-b492-2cfe0960bbd4","astNodeIds":["068e0a10-8e1f-476f-9a02-daf2f32d2876"]},{"text":"Verify the user is successfully logged in","id":"ea1d6701-8e31-47c5-80fe-4f1814e45dcf","astNodeIds":["e787a0c2-e896-4b86-8978-41cba1ea2361"]},{"text":"User is navigating to the root page","id":"264d1e2e-ef7c-4fd6-be70-aaaadf35bb20","astNodeIds":["3a7248ce-88b5-4c78-be99-50c6e0b0f128"]},{"text":"Verify the below tabs are visible","argument":{"dataTable":{"rows":[{"cells":[{"value":"Overview"},{"value":"Payment Assurance"},{"value":"Inventory Management"},{"value":"Sales"},{"value":"Maintenance"}]}]}},"id":"5dbf5555-7774-475d-8c8a-9747adec13d4","astNodeIds":["1dc6ee65-96a2-4f2f-9167-d43c8787f29b"]},{"text":"Verify the below cards are visible","argument":{"dataTable":{"rows":[{"cells":[{"value":"Loans"},{"value":"Assets"},{"value":"Media"},{"value":"Recovery Orders"},{"value":"Vehicles"},{"value":"Geofences"},{"value":"Devices"},{"value":"Organizations"},{"value":"Accounts"},{"value":"Dashboards"},{"value":"Reports"},{"value":"Alerts"}]}]}},"id":"15816096-f294-4d78-8f6e-d0f14a20bb88","astNodeIds":["c8b411d6-9df3-4f47-80f1-869d7c180c06"]},{"text":"Click on hamburger button","id":"d8c22280-cd6a-4f9e-a57f-14137156cfc3","astNodeIds":["e6021f02-d409-4a41-b910-155892d8c66b"]},{"text":"Verify the hamburger elements visibility","argument":{"dataTable":{"rows":[{"cells":[{"value":"Loans"},{"value":"Recovery Orders"},{"value":"Vehicles"},{"value":"Media"},{"value":"Geofences"},{"value":"Reports"},{"value":"Installer Forms"},{"value":"Analytics"},{"value":"Alerts"},{"value":"Datasets"},{"value":"Dashboard"},{"value":"Accounts"},{"value":"Devices"},{"value":"Sims"},{"value":"Organizations"},{"value":"Settings"},{"value":"Batches"},{"value":"Sales Orders"},{"value":"Automations"},{"value":"Brands"},{"value":"Entries"}]}]}},"id":"dd8581f6-f6fe-4925-90c3-1f548e25d666","astNodeIds":["17c3b816-dea1-4812-a227-afc8da814595"]},{"text":"Logout","id":"ebd48582-66f7-4e2c-b40e-1a1661029955","astNodeIds":["e195a66a-bd4a-4760-a67b-1f8ba3ed248c"]}],"tags":[{"name":"@HomePage","astNodeId":"5e2fd32f-58ff-4807-b2fb-81550d2b6ea5"},{"name":"@HomePage_ModuleCardsLoad","astNodeId":"f317f4ab-3723-4f07-99ff-1d985833ef48"}],"astNodeIds":["a67d0986-51c0-4755-90d5-bb6db36fa55e"]}},{"testCase":{"id":"2e2901f5-eb4e-4be2-8b1f-a980284efa43","pickleId":"cf4fbf2c-eabc-46de-8d09-451eaccd4458","testSteps":[{"id":"1d5a23a5-8ce7-47ba-aacd-27fb25e956a6","pickleStepId":"5bd31d4a-c3f3-4c0f-9e6e-dee398c62037","stepDefinitionIds":["e3c762ba-97b4-459a-82d4-93208907b8c8"],"stepMatchArgumentsLists":[{}]},{"id":"a6d1540c-86ac-4761-9deb-c2af16f45339","hookId":"5e764cbb-fd82-40ca-8a6e-e04053deebc2"},{"id":"41f3af33-7a9a-4a72-826a-6751c8fed307","pickleStepId":"c3134297-937e-4d52-b77e-191d9253330d","stepDefinitionIds":["b7d347d3-b8ef-406d-81b7-88930ebcc7cc"],"stepMatchArgumentsLists":[{}]},{"id":"bafe724f-9687-4197-8538-06d77579b695","hookId":"5e764cbb-fd82-40ca-8a6e-e04053deebc2"}]}},{"testCaseStarted":{"timestamp":{"seconds":"1657613058","nanos":695488300},"testCaseId":"2e2901f5-eb4e-4be2-8b1f-a980284efa43","id":"00c8eef4-f6fd-49d4-91b7-dacaef3eb0a3"}},{"testStepStarted":{"timestamp":{"seconds":"1657613058","nanos":761880600},"testStepId":"1d5a23a5-8ce7-47ba-aacd-27fb25e956a6","testCaseStartedId":"00c8eef4-f6fd-49d4-91b7-dacaef3eb0a3"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"6","nanos":307860600}},"timestamp":{"seconds":"1657613065","nanos":69741200},"testStepId":"1d5a23a5-8ce7-47ba-aacd-27fb25e956a6","testCaseStartedId":"00c8eef4-f6fd-49d4-91b7-dacaef3eb0a3"}},{"testStepStarted":{"timestamp":{"seconds":"1657613065","nanos":77090600},"testStepId":"a6d1540c-86ac-4761-9deb-c2af16f45339","testCaseStartedId":"00c8eef4-f6fd-49d4-91b7-dacaef3eb0a3"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":2002200}},"timestamp":{"seconds":"1657613065","nanos":79092800},"testStepId":"a6d1540c-86ac-4761-9deb-c2af16f45339","testCaseStartedId":"00c8eef4-f6fd-49d4-91b7-dacaef3eb0a3"}},{"testStepStarted":{"timestamp":{"seconds":"1657613065","nanos":80083900},"testStepId":"41f3af33-7a9a-4a72-826a-6751c8fed307","testCaseStartedId":"00c8eef4-f6fd-49d4-91b7-dacaef3eb0a3"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"2","nanos":94765900}},"timestamp":{"seconds":"1657613067","nanos":174849800},"testStepId":"41f3af33-7a9a-4a72-826a-6751c8fed307","testCaseStartedId":"00c8eef4-f6fd-49d4-91b7-dacaef3eb0a3"}},{"testStepStarted":{"timestamp":{"seconds":"1657613067","nanos":174849800},"testStepId":"bafe724f-9687-4197-8538-06d77579b695","testCaseStartedId":"00c8eef4-f6fd-49d4-91b7-dacaef3eb0a3"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{}},"timestamp":{"seconds":"1657613067","nanos":174849800},"testStepId":"bafe724f-9687-4197-8538-06d77579b695","testCaseStartedId":"00c8eef4-f6fd-49d4-91b7-dacaef3eb0a3"}},{"testCaseFinished":{"timestamp":{"seconds":"1657613067","nanos":174849800},"testCaseStartedId":"00c8eef4-f6fd-49d4-91b7-dacaef3eb0a3"}},{"testCase":{"id":"5d6acf12-5c36-4f68-89ac-9996530fb718","pickleId":"bf1d42a5-be9a-4e72-965a-f71d8db41a45","testSteps":[{"id":"58752afd-4fc7-4168-98b9-80893b1a6c96","pickleStepId":"a26e27f9-7585-4eab-a27f-4518964163f5","stepDefinitionIds":["0184d99f-6ed2-40f3-b9f5-9131c04ef5ca"],"stepMatchArgumentsLists":[{}]},{"id":"bed236dc-263b-4faa-b724-1de6113ff865","hookId":"5e764cbb-fd82-40ca-8a6e-e04053deebc2"},{"id":"4c642a95-7533-434c-8d67-3aec6fc70697","pickleStepId":"cc9da356-1d32-4120-a19e-732a9e6bd36b","stepDefinitionIds":["6b349260-bfe0-4900-b391-9a89a0d7a078"],"stepMatchArgumentsLists":[{}]},{"id":"c2d84061-58db-4ee7-b637-5a7f0f4f696c","hookId":"5e764cbb-fd82-40ca-8a6e-e04053deebc2"},{"id":"6e57ed22-815b-4f60-9e87-507e8e808eba","pickleStepId":"632fe4e2-9595-40bd-898e-2f664c7a8729","stepDefinitionIds":["110258b9-03c0-44fd-bafe-5277e275debd"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":31,"value":"\"Invalid username or password. Please try again.\"","children":[{"start":32,"value":"Invalid username or password. Please try again.","children":[{}]},{"children":[{}]}]}}]}]},{"id":"3234e293-032a-48ba-bcf6-22ead5b6ff87","hookId":"5e764cbb-fd82-40ca-8a6e-e04053deebc2"}]}},{"testCaseStarted":{"timestamp":{"seconds":"1657613067","nanos":225242700},"testCaseId":"5d6acf12-5c36-4f68-89ac-9996530fb718","id":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepStarted":{"timestamp":{"seconds":"1657613067","nanos":226237500},"testStepId":"58752afd-4fc7-4168-98b9-80893b1a6c96","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":113819900}},"timestamp":{"seconds":"1657613067","nanos":340057400},"testStepId":"58752afd-4fc7-4168-98b9-80893b1a6c96","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepStarted":{"timestamp":{"seconds":"1657613067","nanos":340057400},"testStepId":"bed236dc-263b-4faa-b724-1de6113ff865","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{}},"timestamp":{"seconds":"1657613067","nanos":340057400},"testStepId":"bed236dc-263b-4faa-b724-1de6113ff865","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepStarted":{"timestamp":{"seconds":"1657613067","nanos":342002500},"testStepId":"4c642a95-7533-434c-8d67-3aec6fc70697","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"1","nanos":487679400}},"timestamp":{"seconds":"1657613068","nanos":829681900},"testStepId":"4c642a95-7533-434c-8d67-3aec6fc70697","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepStarted":{"timestamp":{"seconds":"1657613068","nanos":829681900},"testStepId":"c2d84061-58db-4ee7-b637-5a7f0f4f696c","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":1946800}},"timestamp":{"seconds":"1657613068","nanos":831628700},"testStepId":"c2d84061-58db-4ee7-b637-5a7f0f4f696c","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepStarted":{"timestamp":{"seconds":"1657613068","nanos":834467100},"testStepId":"6e57ed22-815b-4f60-9e87-507e8e808eba","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":768024100}},"timestamp":{"seconds":"1657613069","nanos":602491200},"testStepId":"6e57ed22-815b-4f60-9e87-507e8e808eba","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepStarted":{"timestamp":{"seconds":"1657613069","nanos":603496500},"testStepId":"3234e293-032a-48ba-bcf6-22ead5b6ff87","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{}},"timestamp":{"seconds":"1657613069","nanos":603496500},"testStepId":"3234e293-032a-48ba-bcf6-22ead5b6ff87","testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testCaseFinished":{"timestamp":{"seconds":"1657613069","nanos":604521100},"testCaseStartedId":"bac63718-df68-4fca-a230-243b3b5269fa"}},{"testCase":{"id":"28b45098-3962-4db3-81f6-2eaf2b2b7790","pickleId":"c8a6b9b6-fb96-4e21-b493-3959dafe0a60","testSteps":[{"id":"9dd367ba-5785-4c7f-8886-324cf43707f6","pickleStepId":"11f419a2-a8e2-4c78-af11-5a4d7611894f","stepDefinitionIds":["1fc65460-b192-4f0a-889e-862c08a667e6"],"stepMatchArgumentsLists":[{}]},{"id":"2286c2c2-56c8-497e-8d8b-d2cc4ffdb7d4","hookId":"5e764cbb-fd82-40ca-8a6e-e04053deebc2"},{"id":"1af70108-1c07-4ebe-a928-d60f68ebb9bf","pickleStepId":"6c5d4713-65ad-4679-a05c-aa5d6a1f394f","stepDefinitionIds":["8328425f-ba19-46d8-b31e-3527c1d7d979"],"stepMatchArgumentsLists":[{}]},{"id":"da89ef82-a4b1-4a41-818c-8ebd06274528","hookId":"5e764cbb-fd82-40ca-8a6e-e04053deebc2"},{"id":"2092edaf-8e9f-4174-b91b-f23e226bcd11","pickleStepId":"9ce66f1a-4966-4fce-a714-e2f83e55d1e4","stepDefinitionIds":["65455b7e-7d07-4182-ad38-73206ec82af3"],"stepMatchArgumentsLists":[{}]},{"id":"469d57f1-197a-4019-a972-2f527a61f1e4","hookId":"5e764cbb-fd82-40ca-8a6e
