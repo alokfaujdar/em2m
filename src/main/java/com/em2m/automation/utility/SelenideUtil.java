@@ -113,4 +113,16 @@ public class SelenideUtil{
         }
     }
 
+    public static String getValue(String locator){
+        By byValue = getLocator(locator);
+        try{
+            String text = $(byValue).shouldBe(Condition.visible).getValue();
+            return text;
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.error("step got failed while try to get the value of element { "+byValue+" }");
+            return null;
+        }
+    }
+
 }

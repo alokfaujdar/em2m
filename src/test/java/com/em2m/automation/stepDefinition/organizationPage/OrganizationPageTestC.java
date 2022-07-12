@@ -1,5 +1,6 @@
 package com.em2m.automation.stepDefinition.organizationPage;
 
+import com.em2m.automation.PageObjects.OrganizationPage;
 import com.em2m.automation.base.TestBase;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
@@ -10,45 +11,43 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.List;
+import java.util.Map;
+
+import static com.codeborne.selenide.Selenide.page;
 
 public class OrganizationPageTestC extends TestBase {
 
-    private String organizationTemplate;
-    private List<String> organizationProducts;
-    private String organizationCustomerName;
-    private String organizationDescription;
-    private String organizationTimeZone;
-    private String organizationType;
-    private String organizationAdminFirstName;
-    private String organizationAdminLastName;
-    private String organizationAdminEmail;
-    private String organizationAdminPhoneNumber;
-
-    private String updateName;
-    private String updateDescription;
+    public static OrganizationPage organizationPage = page(OrganizationPage.class);
 
     @Given("User is organization page")
     public void userIsOrganizationPage() {
     }
 
-    @When("Create organization button is clicked")
-    public void createOrganizationButtonIsClicked() {
+    @When("Click on Create Organization button")
+    public void clickOnCreateOrganizationButton() {
+        organizationPage.clickCreateOrganization();
        }
 
     @Then("Select the {string} organization template")
     public void selectTheOrganizationTemplate(String template) {
+        organizationPage.selectTheOrganizationTemplate(template);
     }
 
     @Then("Click next")
     public void clickNext() {
+        organizationPage.clickNext();
     }
 
     @Then("Select the following products")
     public void selectTheFollowingProducts(DataTable productsTable) {
+        List<String> productList = productsTable.asList();
+        organizationPage.checkProducts(productList);
      }
 
     @Then("Enter description")
     public void enterDescription(DataTable descriptionTable) {
+        List<Map<String, String>> descriptionMaps = descriptionTable.asMaps();
+        organizationPage.addDescription(descriptionMaps.get(0).get("Customer Name"),descriptionMaps.get(0).get("Description"),descriptionMaps.get(0).get("Time Zone"));
       }
 
     @Then("Check on add administrator checkbox")

@@ -1,8 +1,10 @@
 package com.em2m.automation.stepDefinition.commonSteps;
 
 import com.em2m.automation.PageObjects.Header;
+import com.em2m.automation.PageObjects.HomePage;
 import com.em2m.automation.PageObjects.LoginPage;
 import com.em2m.automation.base.TestBase;
+import com.em2m.automation.utility.CommonMethods;
 import com.em2m.automation.utility.GeneralHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -18,6 +20,7 @@ public class CommonStepsDefinitions extends TestBase {
     public static LoginPage loginPage;
     public static Header header;
     public static WebDriver webDriver;
+    public static HomePage homePage;
 
 
     @Given("Launch the URL do the necessary initializations")
@@ -27,6 +30,7 @@ public class CommonStepsDefinitions extends TestBase {
         loginPage = page(LoginPage.class);
         webDriver = getWebDriver();
         header = page(Header.class);
+        homePage = page(HomePage.class);
     }
 
     @And("User attempt to login")
@@ -46,7 +50,8 @@ public class CommonStepsDefinitions extends TestBase {
 
     @Then("Select the card named {string} then verify the page is loaded with name {string}")
     public void selectTheCardNamed(String cardName, String pageName) {
-
+        homePage.clickOnCard(cardName);
+        CommonMethods.checkPageLoadedByHeader(pageName);
     }
 
     @Then("Logout")
