@@ -6,8 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {
-              "src/test/resources/features/A_LoginPage.feature",
-              "src/test/resources/features/B_HomePage.feature"
+//              "src/test/resources/features/A_LoginPage.feature",
+//              "src/test/resources/features/B_HomePage.feature",
+              "src/test/resources/features/C_OrganizationPage.feature"
         },
         publish = true,
         plugin = {

@@ -14,21 +14,21 @@ public class Header extends TestBase {
 
     public void clickRoot(){
         logger.info("Clicking on Root Button On Header to navigating to Root Page");
-        SelenideUtil.click(ConfigProperties.XPATH.getProperty("rootBtn"), TimeConstant.WAIT_MEDIUM);
+        SelenideUtil.click(ConfigProperties.getProperty("rootBtn"), TimeConstant.WAIT_MEDIUM);
     }
 
     public void clickHamburger(){
         logger.info("Clicking on hamburger button");
-        SelenideUtil.click(ConfigProperties.XPATH.getProperty("hamburgerButton"));
+        SelenideUtil.click(ConfigProperties.getProperty("hamburgerButton"));
     }
 
     public void clickDropDownButton()
     {
-        SelenideUtil.click(ConfigProperties.XPATH.getProperty("dropDown"));
+        SelenideUtil.click(ConfigProperties.getProperty("dropDown"));
     }
 
     public void clickLogoutButton(){
-        SelenideUtil.click(ConfigProperties.XPATH.getProperty("logOutBtn"), TimeConstant.WAIT_NORMAL);
+        SelenideUtil.click(ConfigProperties.getProperty("logOutBtn"), TimeConstant.WAIT_NORMAL);
     }
 
     public void logOut(){
