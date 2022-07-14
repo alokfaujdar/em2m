@@ -10,8 +10,6 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class TimeZone {
 
-
-
     public void selectTimeZone(String timeZone) {
 
         $$(SelenideUtil.getLocator("btn_timeZones")).filterBy(Condition.textCaseSensitive(timeZone)).first().click();

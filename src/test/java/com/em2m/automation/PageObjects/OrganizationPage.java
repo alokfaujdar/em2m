@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class OrganizationPage {
 
     GeneralHelper helper = new GeneralHelper();
-    public static  TimeZone timeZoneHelper = page(TimeZone.class);
+    public static TimeZone timeZoneHelper = page(TimeZone.class);
 
 
     public void clickCreateOrganization() {

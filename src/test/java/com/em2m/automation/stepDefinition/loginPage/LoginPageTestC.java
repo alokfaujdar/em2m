@@ -32,7 +32,7 @@ public class LoginPageTestC extends TestBase {
 
     @Then("Verify User is on login page")
     public void userIsOnLoginPageToAttemptLogin() {
-        logger.info("Verified the page is  loaded");
+        logger.info("Verified the page is loaded");
         Assert.assertTrue(loginPage.verifyLoginPageIsLoaded());
     }
 

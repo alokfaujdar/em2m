@@ -4,9 +4,10 @@ Feature: Vehicles Page Test
 
   @VehiclesPage_NavigateToVehiclePageFromHomePage
   Scenario: Verify the vehicle page navigation functionality
-    Given Launch the URL do the necessary initializations and login
+    Given Launch the URL do the necessary initializations
+    And User attempt to login
     Given After login user is on vehicles page
-    Given User is navigating to the home page
+    Given User is navigating to the root page
     Then Verify the below cards are visible
     |Loans|Assets|Media|Recovery Orders|Vehicles|Geofences|Devices|Organizations|Accounts|Dashboards|Reports|Alerts|
 

@@ -342,3 +342,29 @@
 2022-07-12 13:34:29,634 [main] INFO  com.em2m.automation.base.TestBase - Verified the page is  loaded
 2022-07-12 13:34:29,818 [main] INFO  com.em2m.automation.base.TestBase - trying to login with valid credentials
 2022-07-12 13:34:31,324 [main] INFO  com.em2m.automation.base.TestBase - verifying the user is successfully login
+2022-07-12 15:12:30,506 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-12 15:12:41,382 [main] INFO  com.em2m.automation.base.TestBase - Verified the page is  loaded
+2022-07-12 15:12:44,236 [main] INFO  com.em2m.automation.base.TestBase - Verified the page is  loaded
+2022-07-12 15:12:44,480 [main] INFO  com.em2m.automation.base.TestBase - trying to login with invalid credentials
+2022-07-12 15:12:46,609 [main] INFO  com.em2m.automation.base.TestBase - verifying the error message
+2022-07-12 15:12:47,617 [main] INFO  com.em2m.automation.base.TestBase - Verified the page is  loaded
+2022-07-12 15:12:47,787 [main] INFO  com.em2m.automation.base.TestBase - trying to login with valid credentials
+2022-07-12 15:12:49,621 [main] INFO  com.em2m.automation.base.TestBase - verifying the user is successfully login
+2022-07-12 15:12:58,176 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-12 15:13:04,030 [main] INFO  com.em2m.automation.base.TestBase - Verified the page is  loaded
+2022-07-12 15:13:07,607 [main] INFO  com.em2m.automation.base.TestBase - verifying the user is successfully login
+2022-07-12 15:13:13,475 [main] INFO  com.em2m.automation.base.TestBase - Clicking on Root Button On Header to navigating to Root Page
+2022-07-12 15:13:18,129 [main] INFO  com.em2m.automation.base.TestBase - Clicking on hamburger button
+2022-07-14 14:10:59,464 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 14:11:08,839 [main] INFO  com.em2m.automation.base.TestBase - Verified the page is loaded
+2022-07-14 14:11:12,032 [main] INFO  com.em2m.automation.base.TestBase - Verified the page is loaded
+2022-07-14 14:11:12,216 [main] INFO  com.em2m.automation.base.TestBase - trying to login with invalid credentials
+2022-07-14 14:11:14,259 [main] INFO  com.em2m.automation.base.TestBase - verifying the error message
+2022-07-14 14:11:15,182 [main] INFO  com.em2m.automation.base.TestBase - Verified the page is loaded
+2022-07-14 14:11:15,306 [main] INFO  com.em2m.automation.base.TestBase - trying to login with valid credentials
+2022-07-14 14:11:16,861 [main] INFO  com.em2m.automation.base.TestBase - verifying the user is successfully login
+2022-07-14 14:11:24,393 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 14:11:29,329 [main] INFO  com.em2m.automation.base.TestBase - Verified the page is loaded
+2022-07-14 14:11:32,860 [main] INFO  com.em2m.automation.base.TestBase - verifying the user is successfully login
+2022-07-14 14:11:38,293 [main] INFO  com.em2m.automation.base.TestBase - Clicking on Root Button On Header to navigating to Root Page
+2022-07-14 14:11:42,881 [main] INFO  com.em2m.automation.base.TestBase - Clicking on hamburger button

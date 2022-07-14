@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="46.748">
+    <testcase classname="Login Page Test" name="Scenario_01 Wait for login page to Load Successfully" time="12.711">
+        <system-out>
+            <![CDATA[Given Launch the URL do the necessary initializations.......................passed
+Then Verify User is on login page...........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login Page Test" name="Scenario_02 Verify the un successful login with invalid credentials" time="3.081">
+        <system-out>
+            <![CDATA[Given Verify User is on login page..........................................passed
+When We are on login page and we use invalid username and password for login.passed
+Then Verify the login error message "Invalid username or password. Please try again.".passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login Page Test" name="Scenario_03 Verify the successful login with valid credentials" time="9.144">
+        <system-out>
+            <![CDATA[Given Verify User is on login page..........................................passed
+When We are on login page and we use valid username and password for login..passed
+Then Verify the user is successfully logged in..............................passed
+Then Logout.................................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Home Page Test" name="Scenario_01 Verify all tabs are visible on the home page" time="21.214">
+        <system-out>
+            <![CDATA[Given Launch the URL do the necessary initializations.......................passed
+Given Verify User is on login page..........................................passed
+And User attempt to login...................................................passed
+Then Verify the user is successfully logged in..............................passed
+When User is navigating to the root page....................................passed
+Then Verify the below tabs are visible......................................passed
+Then Verify the below cards are visible.....................................passed
+And Click on hamburger button...............................................passed
+Then Verify the hamburger elements visibility...............................passed
+Then Logout.................................................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
