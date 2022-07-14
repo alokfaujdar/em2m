@@ -20,20 +20,20 @@ public class OrganizationPage {
 
 
     public void clickCreateOrganization() {
-        SelenideUtil.click(ConfigProperties.XPATH.getProperty("btn_createOrganization"), TimeConstant.WAIT_MEDIUM);
+        SelenideUtil.click(ConfigProperties.getProperty("btn_createOrganization"), TimeConstant.WAIT_MEDIUM);
     }
 
     public void clickNext() {
-        SelenideUtil.click(ConfigProperties.XPATH.getProperty("btn_next"));
+        SelenideUtil.click(ConfigProperties.getProperty("btn_next"));
     }
 
     public void selectTheOrganizationTemplate(String templateName) {
-        String xpath = helper.updatedXPATH(ConfigProperties.XPATH.getProperty("template_GenericXpath"),templateName,"%templateName%");
+        String xpath = helper.updatedXPATH(ConfigProperties.getProperty("template_GenericXpath"),templateName,"%templateName%");
         SelenideUtil.click(xpath);
     }
 
     public void checkProducts(List<String> products) {
-        By locator = SelenideUtil.getLocator(ConfigProperties.XPATH.getProperty("chbx_products"));
+        By locator = SelenideUtil.getLocator(ConfigProperties.getProperty("chbx_products"));
         SelenideElement productCheckBox= null;
         for(String product:products)
         {
@@ -54,7 +54,7 @@ public class OrganizationPage {
 
     public void setCustomerName(String name) {
         try{
-            SelenideUtil.sendKeys(ConfigProperties.XPATH.getProperty("txtfld_customerName"),name);
+            SelenideUtil.sendKeys(ConfigProperties.getProperty("txtfld_customerName"),name);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -62,7 +62,7 @@ public class OrganizationPage {
 
     public void setDescription(String description) {
         try{
-            SelenideUtil.sendKeys(ConfigProperties.XPATH.getProperty("textArea_description"),description);
+            SelenideUtil.sendKeys(ConfigProperties.getProperty("textArea_description"),description);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -70,7 +70,7 @@ public class OrganizationPage {
 
 
     public void selectType(String type) {
-        SelenideUtil.click(ConfigProperties.XPATH.getProperty("txtfld_type"));
+        SelenideUtil.click(ConfigProperties.getProperty("txtfld_type"));
         String typeLocator="//span[@class='mat-option-text' and contains(text(),'"+type+"')]";
         $(By.xpath(typeLocator)).click();
     }
@@ -78,7 +78,7 @@ public class OrganizationPage {
 
     public void clickAddTimezone() {
         try{
-            SelenideUtil.click(ConfigProperties.XPATH.getProperty("txtfld_timeZone"));
+            SelenideUtil.click(ConfigProperties.getProperty("txtfld_timeZone"));
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -86,7 +86,7 @@ public class OrganizationPage {
 
 
     public void checkCreateAdminAccount() {
-        SelenideElement createAdminAccountCheckBox=$(ConfigProperties.XPATH.getProperty("chbx_createAdminAccount"));
+        SelenideElement createAdminAccountCheckBox=$(ConfigProperties.getProperty("chbx_createAdminAccount"));
         if(!createAdminAccountCheckBox.isSelected())
         {
             createAdminAccountCheckBox.click();
@@ -95,59 +95,59 @@ public class OrganizationPage {
 
 
     public void setAdminFirstName(String firstName) {
-        SelenideUtil.sendKeys(ConfigProperties.XPATH.getProperty("txt_adminFirstName"),firstName );
+        SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_adminFirstName"),firstName );
     }
 
 
     public void setAdminLatsName(String lastName) {
-        SelenideUtil.sendKeys(ConfigProperties.XPATH.getProperty("txt_adminLastName"),lastName );
+        SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_adminLastName"),lastName );
     }
 
 
     public void setAdminEmail(String email) {
-        SelenideUtil.sendKeys(ConfigProperties.XPATH.getProperty("txt_adminEmail"),email );
+        SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_adminEmail"),email );
     }
 
 
     public void setAdminPhoneNo(String phoneNo) {
-        SelenideUtil.sendKeys(ConfigProperties.XPATH.getProperty("txt_adminPhoneNo"),phoneNo );
+        SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_adminPhoneNo"),phoneNo );
     }
 
 
     public String getTemplatePreview() {
-        return SelenideUtil.getText(ConfigProperties.XPATH.getProperty("pnl_templateReview"));
+        return SelenideUtil.getText(ConfigProperties.getProperty("pnl_templateReview"));
     }
 
 
     public String getOrganizationDetailsPreview() {
-        return SelenideUtil.getText(ConfigProperties.XPATH.getProperty("pnl_organizationDetails"));
+        return SelenideUtil.getText(ConfigProperties.getProperty("pnl_organizationDetails"));
     }
 
 
     public String getProductsPreview() {
-        return SelenideUtil.getText(ConfigProperties.XPATH.getProperty("pnl_products"));
+        return SelenideUtil.getText(ConfigProperties.getProperty("pnl_products"));
     }
 
 
     public String getAdministratorAccountPreview() {
-        return SelenideUtil.getText(ConfigProperties.XPATH.getProperty("pnl_administratorAccount"));
+        return SelenideUtil.getText(ConfigProperties.getProperty("pnl_administratorAccount"));
 
     }
 
 
     public void clickComplete() {
-        SelenideUtil.click(ConfigProperties.XPATH.getProperty("btn_complete"));
+        SelenideUtil.click(ConfigProperties.getProperty("btn_complete"));
     }
 
 
     public void setNameInSettings(String name) {
-        SelenideUtil.sendKeys(ConfigProperties.XPATH.getProperty("txt_name"),name );
+        SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_name"),name );
 
     }
 
 
     public void setDescriptionInSettings(String description) {
-        SelenideUtil.sendKeys(ConfigProperties.XPATH.getProperty("txt_description"),description );
+        SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_description"),description );
     }
 
 
@@ -157,17 +157,17 @@ public class OrganizationPage {
 
 
     public void clickRenameOrganization() {
-        SelenideUtil.click(ConfigProperties.XPATH.getProperty("btn_renameOrganization"));
+        SelenideUtil.click(ConfigProperties.getProperty("btn_renameOrganization"));
     }
 
 
     public String getNameFromSettings() {
-        return SelenideUtil.getValue(ConfigProperties.XPATH.getProperty("txt_name"));
+        return SelenideUtil.getValue(ConfigProperties.getProperty("txt_name"));
     }
 
 
     public String getDescriptionFromSettings() {
-        return  SelenideUtil.getValue(ConfigProperties.XPATH.getProperty("txt_description"));
+        return  SelenideUtil.getValue(ConfigProperties.getProperty("txt_description"));
     }
 
 

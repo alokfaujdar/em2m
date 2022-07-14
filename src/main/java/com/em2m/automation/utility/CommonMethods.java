@@ -28,7 +28,7 @@ public class CommonMethods {
     }
 
     public static void checkPageLoadedByHeader(String pageName){
-        String xpath = helper.updatedXPATH(ConfigProperties.XPATH.getProperty("pageName"),pageName,"%Name%");
+        String xpath = helper.updatedXPATH(ConfigProperties.getProperty("pageName"),pageName,"%Name%");
         Assert.assertTrue(SelenideUtil.isVisible(xpath, TimeConstant.WAIT_MEDIUM));
     }
 

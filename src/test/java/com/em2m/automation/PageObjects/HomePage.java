@@ -14,7 +14,7 @@ public class HomePage {
 
 
     public void clickOnCard(String cardName){
-       String xpath = helper.updatedXPATH(ConfigProperties.XPATH.getProperty("AllTiles"),cardName,"%Name%" );
+       String xpath = helper.updatedXPATH(ConfigProperties.getProperty("AllTiles"),cardName,"%Name%" );
         SelenideUtil.click(xpath, TimeConstant.WAIT_MEDIUM);
     }
 

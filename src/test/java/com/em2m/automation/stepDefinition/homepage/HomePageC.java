@@ -38,14 +38,14 @@ public class HomePageC extends TestBase {
     @Then("Verify the below tabs are visible")
     public void verifyTheBelowTabsAreVisible(DataTable dataTable) {
         List<String> cards = dataTable.asList();
-        List<String> elementsPath = helper.updatedXPATH(ConfigProperties.XPATH.getProperty("allTabElements"),cards,"%Name%");
+        List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("allTabElements"),cards,"%Name%");
         Assert.assertTrue(CommonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
     }
 
     @Given("Verify the below cards are visible")
     public void verifyTheBelowCardsAreVisible(DataTable dataTable) {
        List<String> cards = dataTable.asList();
-       List<String> elementsPath = helper.updatedXPATH(ConfigProperties.XPATH.getProperty("AllTiles"),cards,"%Name%");
+       List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("AllTiles"),cards,"%Name%");
        Assert.assertTrue(CommonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
 
     }
@@ -58,7 +58,7 @@ public class HomePageC extends TestBase {
     @Then("Verify the hamburger elements visibility")
     public void verifyTheHamburgerElementsVisibility(DataTable dataTable) {
             List<String> cards = dataTable.asList();
-            List<String> elementsPath = helper.updatedXPATH(ConfigProperties.XPATH.getProperty("hamburgerElelments"),cards,"%Replaceable%");
+            List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("hamburgerElelments"),cards,"%Replaceable%");
             Assert.assertTrue(CommonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
 
     }

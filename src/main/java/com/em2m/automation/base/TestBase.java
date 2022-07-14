@@ -1,7 +1,5 @@
 package com.em2m.automation.base;
 
-import com.codeborne.selenide.Driver;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import com.em2m.automation.applicationConstansts.TimeConstant;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -29,11 +27,11 @@ public class TestBase {
 
 
     public void setGlobalVariables(){
-        this.browser = ConfigProperties.EM2M.getProperty("browser");
-        this.siteUrl = ConfigProperties.EM2M.getProperty("siteURL");
-        this.isHeadless = ConfigProperties.EM2M.getProperty("isHeadless").equalsIgnoreCase("true");
-        this.username = ConfigProperties.EM2M.getProperty("userName");
-        this.password = ConfigProperties.EM2M.getProperty("password");
+        this.browser = ConfigProperties.getProperty("browser");
+        this.siteUrl = ConfigProperties.getProperty("siteURL");
+        this.isHeadless = ConfigProperties.getProperty("isHeadless").equalsIgnoreCase("true");
+        this.username = ConfigProperties.getProperty("userName");
+        this.password = ConfigProperties.getProperty("password");
     }
 
     public void launchUrl(){

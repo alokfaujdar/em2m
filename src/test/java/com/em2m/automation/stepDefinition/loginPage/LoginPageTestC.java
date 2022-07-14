@@ -1,6 +1,5 @@
 package com.em2m.automation.stepDefinition.loginPage;
 
-import com.codeborne.selenide.Selenide;
 import com.em2m.automation.PageObjects.Header;
 import com.em2m.automation.PageObjects.LoginPage;
 import com.em2m.automation.applicationConstansts.TimeConstant;
@@ -9,10 +8,8 @@ import com.em2m.automation.base.TestBase;
 import com.em2m.automation.utility.GeneralHelper;
 import com.em2m.automation.utility.SelenideUtil;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -59,15 +56,15 @@ public class LoginPageTestC extends TestBase {
     public void verifyTheLoginErrorMessage(String errorMessage){
         logger.info("verifying the error message");
         Assert.assertTrue("Error Message for Invalid Credentials not occur", loginPage.verifyErrorMessage());
-        Assert.assertTrue(errorMessage.equals(SelenideUtil.getText(ConfigProperties.XPATH.getProperty("msg_loginError"))));
+        Assert.assertTrue(errorMessage.equals(SelenideUtil.getText(ConfigProperties.getProperty("msg_loginError"))));
     }
 
     @Then("Verify the user is successfully logged in")
     public void verifyTheSuccessfulLoginByCheckingTheVisibilityOfHomePageHeader() {
         logger.info("verifying the user is successfully login");
         Assert.assertTrue(
-                (SelenideUtil.isVisible(ConfigProperties.XPATH.getProperty("homePageHeader"), TimeConstant.WAIT_HIGH))
-                      && (SelenideUtil.isVisible(ConfigProperties.XPATH.getProperty("homePageHeader"),TimeConstant.WAIT_HIGH))
+                (SelenideUtil.isVisible(ConfigProperties.getProperty("homePageHeader"), TimeConstant.WAIT_HIGH))
+                      && (SelenideUtil.isVisible(ConfigProperties.getProperty("homePageHeader"),TimeConstant.WAIT_HIGH))
         );
    }
 

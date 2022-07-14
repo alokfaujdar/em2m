@@ -5,21 +5,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+
 public final class ConfigProperties {
 
-    public static final Properties EM2M = loadGlobalVariables();
+    public static final Properties EM2M = loadProperties();
 
-    public static final Properties loadGlobalVariables() {
+    public static final Properties loadProperties() {
         Properties props;
         props = loadLocatorProps("src/main/resources/Configuration.properties");
-        return props;
-    }
-
-    public static final Properties XPATH = loadLocator();
-
-    public static final Properties loadLocator() {
-        Properties props;
-        props = loadLocatorProps("src/main/resources/locators.properties");
         return props;
     }
 
@@ -50,6 +43,14 @@ public final class ConfigProperties {
                 }
             }
         }
+    }
+
+    public static String getProperty(String key){
+        return EM2M.getProperty(key);
+    }
+
+    public static String getProperty(String key, String defaultValue){
+        return EM2M.getProperty(key, defaultValue);
     }
 
 }
