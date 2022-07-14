@@ -42,7 +42,7 @@ public class HomePageC extends TestBase {
         Assert.assertTrue(CommonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
     }
 
-    @Given("Verify the below cards are visible")
+    @Given("Verify the below tiles are visible")
     public void verifyTheBelowCardsAreVisible(DataTable dataTable) {
        List<String> cards = dataTable.asList();
        List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("AllTiles"),cards,"%Name%");

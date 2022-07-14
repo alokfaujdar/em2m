@@ -14,7 +14,7 @@ Scenario: Scenario_01 Verify all tabs are visible on the home page
   When User is navigating to the root page
   Then Verify the below tabs are visible
   |Overview|Payment Assurance|Inventory Management|Sales|Maintenance|
-  Then Verify the below cards are visible
+  Then Verify the below tiles are visible
   |Loans|Assets|Media|Recovery Orders|Vehicles|Geofences|Devices|Organizations|Accounts|Dashboards|Reports|Alerts|
   And Click on hamburger button
   Then Verify the hamburger elements visibility
