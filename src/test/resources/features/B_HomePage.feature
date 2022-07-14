@@ -1,12 +1,12 @@
 @HomePage
 Feature: Home Page Test
   In order to test functionality of home page
-  We will verify different cards on the home page to check home page functionality
+  We will verify different tiles on the home page to check home page functionality
 
 Background: Launch the URL do the necessary initializations and login
   Given Launch the URL do the necessary initializations
 
-@HomePage_ModuleCardsLoad
+@HomePage_ModuletilesLoad
 Scenario: Scenario_01 Verify all tabs are visible on the home page
   Given Verify User is on login page
   And User attempt to login
@@ -17,6 +17,6 @@ Scenario: Scenario_01 Verify all tabs are visible on the home page
   Then Verify the below tiles are visible
   |Loans|Assets|Media|Recovery Orders|Vehicles|Geofences|Devices|Organizations|Accounts|Dashboards|Reports|Alerts|
   And Click on hamburger button
-  Then Verify the hamburger elements visibility
+  Then Verify the hamburger menu elements visibility
   |Loans|Recovery Orders|Vehicles|Media|Geofences|Reports|Installer Forms|Analytics|Alerts|Datasets|Dashboard|Accounts|Devices|Sims|Organizations|Settings|Batches|Sales Orders|Automations|Brands|Entries|
   Then Logout

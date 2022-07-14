@@ -30,22 +30,22 @@ public class HomePageC extends TestBase {
     public static WebDriver webDriver = getWebDriver();
 
 
-    @When("User is navigating to the root page")
+    @Then("User is navigating to the root page")
     public void userIsOnTheHomePage() {
         header.clickRoot();
     }
 
     @Then("Verify the below tabs are visible")
     public void verifyTheBelowTabsAreVisible(DataTable dataTable) {
-        List<String> cards = dataTable.asList();
-        List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("allTabElements"),cards,"%Name%");
+        List<String> tabs = dataTable.asList();
+        List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("allTabElements"),tabs,"%Name%");
         Assert.assertTrue(CommonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
     }
 
     @Given("Verify the below tiles are visible")
-    public void verifyTheBelowCardsAreVisible(DataTable dataTable) {
-       List<String> cards = dataTable.asList();
-       List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("AllTiles"),cards,"%Name%");
+    public void verifyTheBelowTilesAreVisible(DataTable dataTable) {
+       List<String> tiles = dataTable.asList();
+       List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("AllTiles"),tiles,"%Name%");
        Assert.assertTrue(CommonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
 
     }
@@ -55,18 +55,11 @@ public class HomePageC extends TestBase {
         header.clickHamburger();
     }
 
-    @Then("Verify the hamburger elements visibility")
-    public void verifyTheHamburgerElementsVisibility(DataTable dataTable) {
-            List<String> cards = dataTable.asList();
-            List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("hamburgerElelments"),cards,"%Replaceable%");
+    @Then("Verify the hamburger menu elements visibility")
+    public void verifyTheHamburgerMenuElementsVisibility(DataTable dataTable) {
+            List<String> menuElements = dataTable.asList();
+            List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("hamburgerElements"),menuElements,"%Name%");
             Assert.assertTrue(CommonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
-
-    }
-
-
-    @After("@HomePage")
-    public void closeTheBrowser(){
-
     }
 
     @AfterStep("@HomePage")
@@ -76,6 +69,7 @@ public class HomePageC extends TestBase {
         }
     }
 
-
+    @After("@HomePage")
+    public void closeTheBrowser(){}
 
 }

@@ -40,12 +40,11 @@ public class GeneralHelper extends TestBase {
         String updatedXpath = null;
         try{
             updatedXpath = genericLocator.replace(toBeReplaced,toBeUpdate);
-            return updatedXpath;
         }catch (Exception e){
             e.printStackTrace();
             logger.error("failed to update the xpath");
-            return updatedXpath;
         }
+        return updatedXpath;
     }
 
     public List updatedXPATH(String genericLocator, List<String> toBeUpdate, String toBeReplaced){

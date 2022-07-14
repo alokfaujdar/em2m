@@ -1,5 +1,6 @@
 package com.em2m.automation.stepDefinition.VehiclesPage;
 
+import com.em2m.automation.PageObjects.Header;
 import com.em2m.automation.base.TestBase;
 import com.em2m.automation.stepDefinition.loginPage.LoginPageTestC;
 import io.cucumber.java.AfterStep;
@@ -12,25 +13,23 @@ import org.apache.log4j.Logger;
 
 public class VehiclesPageTestC extends TestBase {
     private final static Logger logger = Logger.getLogger(LoginPageTestC.class);
-    @Given("After login user is on vehicles page")
-    public void afterLoginUserIsAlreadyOnVehiclesPage() {
-    }
 
-    @Then("User clicks on global search button")
-    public void userClicksOnGlobalSearchButton() {
-      }
+    Header header = new Header();
 
-    @And("User selects for an organization {string}")
-    public void userSelectsForAnOrganization(String organization) throws InterruptedException {
+    @Then("After login user is on {string} page")
+    public void afterLoginUserIsAlreadyOnVehiclesPage(String pageNameHeader) {
+        header.checkWorkspaceNameOnHeader(pageNameHeader);
     }
 
     @Given("verify User is on selected organization description {string} home page")
     public void verifyUserIsOnSelectedOrganizationHomePage(String orgDescription) {
-
+        header.checkOrganizationNameOnHeader(orgDescription);
      }
 
-    @Then("User navigates to selected organization vehicle page")
-    public void userNavigatesToSelectedOrganizationVehiclePage() {
+    @Then("User navigates to organization {string} page")
+    public void userNavigatesToOrganizationVehiclesPage(String workspaceName) {
+        header.selectMenuElement(workspaceName);
+
     }
 
     @Then("User removes vehicle inventory filter and picks a vehicle device that does not have a VIN")

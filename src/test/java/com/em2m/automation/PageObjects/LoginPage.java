@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage extends TestBase {
 
-    public boolean  verifyLoginPageIsLoaded(){
+    public boolean verifyLoginPageIsLoaded(){
         boolean flag1, flag2,flag3;
         flag1=SelenideUtil.isVisible(ConfigProperties.getProperty("userNameTextBox"), TimeConstant.WAIT_HIGH);
         flag2=SelenideUtil.isVisible(ConfigProperties.getProperty("passwordTextBox"), TimeConstant.WAIT_HIGH);
@@ -37,7 +37,7 @@ public class LoginPage extends TestBase {
     public boolean logIn(){
         String userName = ConfigProperties.getProperty("userName");
         String password = ConfigProperties.getProperty("password");
-       return  logIn(userName, password);
+        return logIn(userName, password);
     }
 
     public boolean verifyErrorMessage(){

@@ -12,9 +12,8 @@ public class HomePage {
     GeneralHelper helper = new GeneralHelper();
     Logger logger = Logger.getLogger(HomePage.class);
 
-
-    public void clickOnCard(String cardName){
-       String xpath = helper.updatedXPATH(ConfigProperties.getProperty("AllTiles"),cardName,"%Name%" );
+    public void clickOnTile(String tileName){
+       String xpath = helper.updatedXPATH(ConfigProperties.getProperty("AllTiles"),tileName,"%Name%" );
         SelenideUtil.click(xpath, TimeConstant.WAIT_MEDIUM);
     }
 

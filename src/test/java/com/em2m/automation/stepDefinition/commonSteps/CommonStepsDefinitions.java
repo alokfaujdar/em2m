@@ -50,7 +50,7 @@ public class CommonStepsDefinitions extends TestBase {
 
     @Then("Select the card named {string} then verify the page is loaded with name {string}")
     public void selectTheCardNamed(String cardName, String pageName) {
-        homePage.clickOnCard(cardName);
+        homePage.clickOnTile(cardName);
         CommonMethods.checkPageLoadedByHeader(pageName);
     }
 
