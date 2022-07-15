@@ -62,5 +62,4 @@ public class CommonStepsDefinitions extends TestBase {
         closeTheWindow();
     }
 
-
 }
