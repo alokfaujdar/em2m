@@ -44,3 +44,7 @@ Thumbs.db
 *.mov
 *.wmv
 
+# screenshot images
+build/reports/tests/
+
+/target/

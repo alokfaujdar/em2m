@@ -14,7 +14,7 @@ public class Header extends TestBase {
 
     public void clickRoot(){
         logger.info("Clicking on Root Button On Header to navigating to Root Page");
-        SelenideUtil.click(ConfigProperties.getProperty("rootBtn"), TimeConstant.WAIT_MEDIUM);
+        SelenideUtil.click(ConfigProperties.getProperty("rootBtn"), TimeConstant.WAIT_NORMAL);
     }
 
     public void clickHamburger(){
@@ -38,16 +38,16 @@ public class Header extends TestBase {
         SelenideUtil.click(ConfigProperties.getProperty("dropDown"));
     }
 
-    public void checkOrganizationNameOnHeader(String orgNameHeader) {
-        String xpath = helper.updatedXPATH(ConfigProperties.getProperty("pageName"),orgNameHeader,"%Name%");
-        if(SelenideUtil.isVisible(xpath)) {
+    /*public void checkOrganizationNameOnHeader(String orgNameHeader) {
+        String xpath = helper.updatedXPATH(ConfigProperties.getProperty("organizationNameText"),orgNameHeader,"%Name%");
+        if(SelenideUtil.isVisible(xpath,TimeConstant.WAIT_NORMAL)) {
             logger.info("user is on selected organization Page" + orgNameHeader);
         }
         else {
             logger.error("user is not on selected organization Page");
             Assert.fail();
         }
-    }
+    }*/
 
     public void clickLogoutButton(){
         SelenideUtil.click(ConfigProperties.getProperty("logOutBtn"), TimeConstant.WAIT_NORMAL);
@@ -62,8 +62,7 @@ public class Header extends TestBase {
     public void checkWorkspaceNameOnHeader(String pageHeaderName) {
         logger.info("Checking workspace name on header ");
         String pName =  helper.updatedXPATH(ConfigProperties.getProperty("pageName"),pageHeaderName,"%Name%");
-
-        if(SelenideUtil.isVisible(pName,TimeConstant.WAIT_MINIMUM)){
+        if(SelenideUtil.isVisible(pName,TimeConstant.WAIT_MEDIUM)){
             logger.info("user is on desired workspace");
         }
         else {

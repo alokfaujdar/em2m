@@ -6,7 +6,7 @@ Feature: Device page Test
 
 Background:User Login and Navigate to Home Page and then Select Device card
   Given Launch the URL do the necessary initializations and login
-  When User is navigating to the home page
+  When User is navigating to the root page
   Then Verify the below tabs are visible
   | Overview | Payment Assurance | Inventory Management | Sales | Maintenance|
   And Select the card named "Devices" then verify the page is loaded with name "Devices"

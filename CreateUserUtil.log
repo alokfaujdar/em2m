@@ -368,3 +368,40 @@
 2022-07-14 14:11:32,860 [main] INFO  com.em2m.automation.base.TestBase - verifying the user is successfully login
 2022-07-14 14:11:38,293 [main] INFO  com.em2m.automation.base.TestBase - Clicking on Root Button On Header to navigating to Root Page
 2022-07-14 14:11:42,881 [main] INFO  com.em2m.automation.base.TestBase - Clicking on hamburger button
+2022-07-14 19:17:28,130 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 19:26:08,996 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 19:26:22,643 [main] INFO  com.em2m.automation.base.TestBase - Checking workspace name on header 
+2022-07-14 19:29:37,192 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 19:29:51,091 [main] INFO  com.em2m.automation.base.TestBase - Checking workspace name on header 
+2022-07-14 19:33:05,768 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 19:33:18,755 [main] INFO  com.em2m.automation.base.TestBase - Checking workspace name on header 
+2022-07-14 19:33:24,197 [main] INFO  com.em2m.automation.base.TestBase - user is on desired workspace
+2022-07-14 19:33:24,201 [main] INFO  com.em2m.automation.base.TestBase - Clicking on Root Button On Header to navigating to Root Page
+2022-07-14 19:41:26,683 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 19:41:40,219 [main] INFO  com.em2m.automation.base.TestBase - Checking workspace name on header 
+2022-07-14 19:41:45,604 [main] INFO  com.em2m.automation.base.TestBase - user is on desired workspace
+2022-07-14 19:41:45,607 [main] INFO  com.em2m.automation.base.TestBase - Clicking on Root Button On Header to navigating to Root Page
+2022-07-14 20:05:49,477 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 20:06:04,954 [main] INFO  com.em2m.automation.base.TestBase - Checking workspace name on header 
+2022-07-14 20:14:25,015 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 20:14:38,546 [main] INFO  com.em2m.automation.base.TestBase - Checking workspace name on header 
+2022-07-14 20:15:58,260 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 20:16:10,588 [main] INFO  com.em2m.automation.base.TestBase - Checking workspace name on header 
+2022-07-14 20:16:16,681 [main] INFO  com.em2m.automation.base.TestBase - user is on desired workspace
+2022-07-14 20:16:16,685 [main] INFO  com.em2m.automation.base.TestBase - Clicking on Root Button On Header to navigating to Root Page
+2022-07-14 20:16:18,089 [main] INFO  com.em2m.automation.PageObjects.HomePage - user is on selected organization PageRoot
+2022-07-14 20:16:18,091 [main] INFO  com.em2m.automation.base.TestBase - Navigating on workspace from menu
+2022-07-14 20:23:10,251 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 20:23:23,431 [main] INFO  com.em2m.automation.base.TestBase - Checking workspace name on header 
+2022-07-14 20:23:29,349 [main] INFO  com.em2m.automation.base.TestBase - user is on desired workspace
+2022-07-14 20:23:29,356 [main] INFO  com.em2m.automation.base.TestBase - Clicking on Root Button On Header to navigating to Root Page
+2022-07-14 20:23:30,693 [main] INFO  com.em2m.automation.PageObjects.HomePage - user is on selected organization PageRoot
+2022-07-14 20:23:30,695 [main] INFO  com.em2m.automation.base.TestBase - Clicking on hamburger button
+2022-07-14 20:23:30,847 [main] INFO  com.em2m.automation.base.TestBase - Navigating on workspace from menu
+2022-07-14 20:38:23,359 [main] INFO  com.em2m.automation.base.TestBase - launching the URL
+2022-07-14 20:38:38,104 [main] INFO  com.em2m.automation.base.TestBase - Checking workspace name on header 
+2022-07-14 20:38:44,107 [main] INFO  com.em2m.automation.base.TestBase - user is on desired workspace
+2022-07-14 20:38:44,111 [main] INFO  com.em2m.automation.base.TestBase - Clicking on Root Button On Header to navigating to Root Page
+2022-07-14 20:38:47,798 [main] INFO  com.em2m.automation.PageObjects.HomePage - user is on selected organization PageRoot
+2022-07-14 20:38:47,799 [main] INFO  com.em2m.automation.base.TestBase - Clicking on hamburger button
+2022-07-14 20:38:47,941 [main] INFO  com.em2m.automation.base.TestBase - Navigating on workspace from menu

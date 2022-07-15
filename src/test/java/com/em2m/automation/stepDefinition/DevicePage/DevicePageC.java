@@ -1,12 +1,17 @@
 package com.em2m.automation.stepDefinition.DevicePage;
 
+import com.em2m.automation.base.ConfigProperties;
 import com.em2m.automation.base.TestBase;
+import com.em2m.automation.utility.SelenideUtil;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.By;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class DevicePageC extends TestBase {
 
@@ -36,7 +41,9 @@ public class DevicePageC extends TestBase {
     }
 
     @Given("Search for Device with DeviceId {string} in search text box")
-    public void searchForDeviceWithDeviceIdInSearchTextBox(String DeviceId) {
+    public void searchForDeviceWithDeviceIdInSearchTextBox(String deviceId) {
+        $(By.xpath(ConfigProperties.getProperty("searchBar"))).setValue(deviceId);
+        $(By.xpath(ConfigProperties.getProperty("searchiconBtn"))).click();
   }
 
     @Then("Open on the Device with DeviceId {string} on search result")

@@ -1,5 +1,0 @@
-com\em2m\automation\base\TestBase.class
-com\em2m\automation\base\ConfigProperties.class
-com\em2m\automation\utility\SelenideUtil.class
-com\em2m\automation\utility\GeneralHelper.class
-com\em2m\automation\applicationConstansts\TimeConstant.class
