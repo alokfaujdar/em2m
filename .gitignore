@@ -1,4 +1,4 @@
-
+/target/
 # Node artifact files
 node_modules/
 dist/
@@ -15,9 +15,6 @@ dist/
 # Package files
 *.jar
 
-# Maven
-target/
-dist/
 
 # JetBrains IDE
 .idea/
@@ -47,4 +44,3 @@ Thumbs.db
 # screenshot images
 build/reports/tests/
 
-/target/

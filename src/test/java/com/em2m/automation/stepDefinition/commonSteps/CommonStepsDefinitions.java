@@ -21,6 +21,7 @@ public class CommonStepsDefinitions extends TestBase {
     public static Header header;
     public static WebDriver webDriver;
     public static HomePage homePage;
+    public static CommonMethods commonMethods;
 
 
     @Given("Launch the URL do the necessary initializations")
@@ -31,6 +32,7 @@ public class CommonStepsDefinitions extends TestBase {
         webDriver = getWebDriver();
         header = page(Header.class);
         homePage = page(HomePage.class);
+        commonMethods = new CommonMethods();
     }
 
     @And("User attempt to login")
@@ -51,7 +53,7 @@ public class CommonStepsDefinitions extends TestBase {
     @Then("Select the card named {string} then verify the page is loaded with name {string}")
     public void selectTheCardNamed(String cardName, String pageName) {
         homePage.clickOnTile(cardName);
-        CommonMethods.checkPageLoadedByHeader(pageName);
+        commonMethods.checkPageLoadedByHeader(pageName);
     }
 
     @Then("Logout")

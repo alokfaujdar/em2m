@@ -6,6 +6,8 @@ import com.em2m.automation.applicationConstansts.TimeConstant;
 import com.em2m.automation.base.ConfigProperties;
 import com.em2m.automation.utility.GeneralHelper;
 import com.em2m.automation.utility.SelenideUtil;
+import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 import java.util.List;
@@ -17,6 +19,7 @@ public class OrganizationPage {
 
     GeneralHelper helper = new GeneralHelper();
     public static TimeZone timeZoneHelper = page(TimeZone.class);
+    Logger logger = Logger.getLogger(OrganizationPage.class);
 
 
     public void clickCreateOrganization() {
@@ -24,7 +27,13 @@ public class OrganizationPage {
     }
 
     public void clickNext() {
-        SelenideUtil.click(ConfigProperties.getProperty("btn_next"));
+        try {
+            if ($(SelenideUtil.getLocator(ConfigProperties.getProperty("btn_next"))).getAttribute("disabled").equals("true")) {
+                Assert.fail("Next Button Is Not Clickable");
+            }
+        } catch (NullPointerException e) {
+            SelenideUtil.click(ConfigProperties.getProperty("btn_next"));
+        }
     }
 
     public void selectTheOrganizationTemplate(String templateName) {
@@ -48,8 +57,13 @@ public class OrganizationPage {
     public void addDescription(String name, String description, String timeZone){
         setCustomerName(name);
         setDescription(description);
+        clickSelectTimeZone();
         timeZoneHelper.selectTimeZone(timeZone);
 
+    }
+
+    private void clickSelectTimeZone() {
+        SelenideUtil.click(ConfigProperties.getProperty("txtfld_timeZone"));
     }
 
     public void setCustomerName(String name) {
@@ -67,7 +81,6 @@ public class OrganizationPage {
             e.printStackTrace();
         }
     }
-
 
     public void selectType(String type) {
         SelenideUtil.click(ConfigProperties.getProperty("txtfld_type"));
@@ -111,6 +124,90 @@ public class OrganizationPage {
 
     public void setAdminPhoneNo(String phoneNo) {
         SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_adminPhoneNo"),phoneNo );
+    }
+
+    public void verifyPreview(String organization,List<String>organizationProducts, String adminFirstName, String adminLastName,
+                              String adminEmail, String adminPhoneNumber, String description, String customerName, String timeZone, String organizationType){
+
+        if(getTemplatePreview().contains(organization)) {
+            logger.info(organization+" template got selected successfully");
+        }
+        else {
+            logger.error(organization+" template not present in the preview");
+        }
+
+        if(organization.equals("Standard Dealership")) {
+            for(String expectedProduct:organizationProducts)
+            {
+                if(getProductsPreview().contains(expectedProduct)) {
+                    logger.info(organization+" products got selected successfully");
+                }
+                else {
+                    logger.error(expectedProduct+" product not present in the preview");
+                }
+            }
+            String adminAccountPreview=getAdministratorAccountPreview();
+            if(adminAccountPreview.contains(adminFirstName)){
+                logger.info("Admin first name " +adminFirstName+" got set successfully");
+            }
+            else {
+                logger.error("Admin first name " +adminFirstName+" not present in the preview");
+            }
+
+            if(adminAccountPreview.contains(adminLastName)){
+                logger.info("Admin last name " +adminLastName+" got set successfully");
+            }
+            else {
+                logger.error("Admin last name " +adminLastName+" not present in the preview");
+            }
+
+            if(adminAccountPreview.contains(adminEmail)){
+                logger.info("Admin email " +adminEmail+" got set successfully");
+            }
+            else {
+                logger.error("Admin email " +adminEmail+" not present in the preview");
+            }
+
+            String phoneNumberInFormat=helper.getPhoneNumberInFormat(adminPhoneNumber);
+            if(adminAccountPreview.contains(phoneNumberInFormat)) {
+                logger.info("Admin phone number " +phoneNumberInFormat+" got set successfully");
+            }
+            else {
+                logger.error("Admin phone number " +phoneNumberInFormat+" not present in the preview");
+            }
+        }
+
+        String detailPreview=getOrganizationDetailsPreview();
+        if(detailPreview.contains(description)){
+            logger.info("Organization description " +description+" got set successfully");
+        }
+        else {
+            logger.error("Organization description " +description+" not present in the preview");
+        }
+
+        if(detailPreview.contains(customerName)){
+            logger.info("Organization customer name " +customerName+" got set successfully");
+        }
+        else {
+            logger.error("Organization customer name " +customerName+" not present in the preview");
+        }
+
+        if(detailPreview.contains(timeZone)){
+            logger.info("Organization timezone " +timeZone+" got set successfully");
+        }
+        else {
+            logger.error("Organization timezone " +timeZone+" not present in the preview");
+        }
+
+        if(organization.equals("Basic Organization")) {
+            if(getOrganizationDetailsPreview().contains(organizationType)||
+                    getOrganizationDetailsPreview().contains(organizationType.toLowerCase())){
+                logger.info("Organization type " +organizationType+" got set successfully");
+            }
+            else {
+                logger.error("Organization type  " +organizationType+" not present in the preview");
+            }
+        }
     }
 
 

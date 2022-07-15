@@ -26,6 +26,7 @@ public class LoginPageTestC extends TestBase {
     LoginPage loginPage = page(LoginPage.class);
     Header header = page(Header.class);
     public static WebDriver webDriver = getWebDriver();
+    GeneralHelper helper = new GeneralHelper();
 
     @Then("Verify User is on login page")
     public void userIsOnLoginPageToAttemptLogin() {
@@ -71,7 +72,7 @@ public class LoginPageTestC extends TestBase {
    @AfterStep("@LoginPage")
    public void takeScreenshotOnFail(Scenario scenario){
         if(scenario.isFailed()){
-            scenario.attach(GeneralHelper.getByteScreenshot(), "image/png", "screenshot Name");
+            scenario.attach(helper.getByteScreenshot(), "image/png", "screenshot Name");
         }
     }
 

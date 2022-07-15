@@ -13,7 +13,7 @@ Scenario: Scenario_01 Create standard dealership organization
   Then User is navigating to the root page
   Then Select the card named "Organizations" then verify the page is loaded with name "Organizations"
   When Click on Create Organization button
-  Then Select the "Standard Dealership" organization template
+  Then Select the "Standard Dealership" organization
   Then Click next
   Then Select the following products
   |  Payment Assurance                |
@@ -25,11 +25,11 @@ Scenario: Scenario_01 Create standard dealership organization
   |  Customer Name      |  Description           |  Time Zone  |
   |  Demo Std Customer  |  Demo std Description  |  Chicago    |
   Then Click next
-  Then Check on add administrator checkbox
+  Then Check on create organization with an administrator account
   Then Enter first name "First Name"
   Then Enter last name "Last Name"
   Then Enter unique email
-  Then Enter phone number "1234567890"
+  Then Enter phone number
   Then Click next
   Then Verify preview
   Then Click complete

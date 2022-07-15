@@ -54,7 +54,7 @@ public class Header extends TestBase {
     }
 
     public void logOut(){
-        GeneralHelper.pressEscape(webDriver);
+        helper.pressEscape(webDriver);
         clickDropDownButton();
         clickLogoutButton();
     }

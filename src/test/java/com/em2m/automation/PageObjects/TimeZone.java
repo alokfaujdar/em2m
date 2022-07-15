@@ -11,7 +11,7 @@ public class TimeZone {
 
     public void selectTimeZone(String timeZone) {
 
-        $$(SelenideUtil.getLocator("btn_timeZones")).filterBy(Condition.textCaseSensitive(timeZone)).first().click();
+        $$(SelenideUtil.getLocator(ConfigProperties.getProperty("btn_timeZones"))).filterBy(Condition.textCaseSensitive(timeZone)).first().click();
         SelenideUtil.click(ConfigProperties.getProperty("btn_ok"));
     }
 

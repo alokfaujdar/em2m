@@ -6,11 +6,12 @@ import com.em2m.automation.base.TestBase;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
-
+import static com.em2m.automation.base.TestBase.getWebDriver;
 
 
 public class SelenideUtil{
@@ -122,6 +123,25 @@ public class SelenideUtil{
             e.printStackTrace();
             logger.error("step got failed while try to get the value of element { "+byValue+" }");
             return null;
+        }
+    }
+
+    /* Below method is for click on element by JavaScriptExecuter*/
+    public static void clickByJSE(String locator){
+        By byValue = getLocator(locator);
+        JavascriptExecutor executor = (JavascriptExecutor) getWebDriver();
+        executor.executeScript("arguments[0].click();", $(byValue));   }
+
+    public static void checkCheckBox(String locator){
+        By byValue = getLocator(locator);
+        try{
+            if($(byValue).shouldBe(Condition.visible).isDisplayed()){
+                if(!$(byValue).isSelected()){
+                    clickByJSE(locator);
+                }
+            }
+        }catch (Exception e){
+
         }
     }
 

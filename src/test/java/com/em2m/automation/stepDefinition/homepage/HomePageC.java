@@ -28,6 +28,7 @@ public class HomePageC extends TestBase {
     public static HomePage homePage = page(HomePage.class);
     public static GeneralHelper helper = new GeneralHelper();
     public static WebDriver webDriver = getWebDriver();
+    CommonMethods commonMethods = new CommonMethods();
 
 
     @Then("User is navigating to the root page")
@@ -39,14 +40,14 @@ public class HomePageC extends TestBase {
     public void verifyTheBelowTabsAreVisible(DataTable dataTable) {
         List<String> tabs = dataTable.asList();
         List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("allTabElements"),tabs,"%Name%");
-        Assert.assertTrue(CommonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
+        Assert.assertTrue(commonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
     }
 
     @Given("Verify the below tiles are visible")
     public void verifyTheBelowTilesAreVisible(DataTable dataTable) {
        List<String> tiles = dataTable.asList();
        List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("AllTiles"),tiles,"%Name%");
-       Assert.assertTrue(CommonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
+       Assert.assertTrue(commonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
 
     }
 
@@ -59,13 +60,13 @@ public class HomePageC extends TestBase {
     public void verifyTheHamburgerMenuElementsVisibility(DataTable dataTable) {
             List<String> menuElements = dataTable.asList();
             List<String> elementsPath = helper.updatedXPATH(ConfigProperties.getProperty("hamburgerElements"),menuElements,"%Name%");
-            Assert.assertTrue(CommonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
+            Assert.assertTrue(commonMethods.checkVisibilityOfMultipleElement(elementsPath, true));
     }
 
     @AfterStep("@HomePage")
     public void takeScreenshotOnFail(Scenario scenario){
         if(scenario.isFailed()){
-            scenario.attach(GeneralHelper.getByteScreenshot(), "image/png", "screenshot Name");
+            scenario.attach(helper.getByteScreenshot(), "image/png", "screenshot Name");
         }
     }
 

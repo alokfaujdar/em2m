@@ -12,10 +12,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class GeneralHelper extends TestBase {
 
-    public static void pressEscape(WebDriver webDriver){
+    public  void pressEscape(WebDriver webDriver){
         try{
             Actions action = new Actions(webDriver);
             action.sendKeys(Keys.ESCAPE).perform();
@@ -24,7 +25,7 @@ public class GeneralHelper extends TestBase {
         }
     }
 
-    public static byte[] getByteScreenshot(){
+    public  byte[] getByteScreenshot(){
         TestBase tb=new TestBase();
         File src = ((TakesScreenshot) tb.getWebDriver()).getScreenshotAs(OutputType.FILE);
         byte[] fileContent = new byte[0];
@@ -53,4 +54,19 @@ public class GeneralHelper extends TestBase {
         return updatedList;
     }
 
+    public  String getRandomAlphaNumericString(int length) {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < length) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String randomString = salt.toString();
+        return randomString;
+    }
+
+    public static String getPhoneNumberInFormat(String phoneNumber) {
+        return phoneNumber.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
+    }
 }
