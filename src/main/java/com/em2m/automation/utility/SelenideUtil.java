@@ -82,7 +82,7 @@ public class SelenideUtil{
 
     public static void sendKeys(String locator, String valueToSend){
         long wait = TimeConstant.WAIT_NORMAL;
-        sendKeys(locator, valueToSend,wait);
+        sendKeys(locator,valueToSend,wait);
     }
 
     public static void click(String locator, final long waitTime){

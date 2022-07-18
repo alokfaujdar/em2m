@@ -15,17 +15,15 @@ Feature: Vehicles Page Test
   Scenario: Search for the last created device and installation of device into a vehicle
     Given verify User is on selected organization "Root" home page
     Then User navigates to organization "Vehicles" page
-#    Then User removes vehicle inventory filter from search text box
-    Then Search for Device with DeviceId "DEVICEIDAUTO0055" in search text box
-    Then select the searched device from the table and will check whether the device is installed or not
+    Then Search for Device with DeviceId "DEVICEIDAUTO0003" in search text box
+    Then select the searched device from the list and will verify whether the device is installed or not
     Then User clicks on the install device icon
-    Then Logout
-#
-#  @VehiclesPage_ProvideVINDeviceDetailsOnVehiclePage
-#  Scenario: Provide VIN and other details to install selected device into a Vehicle
-#    Given Verify user is on "SETTINGS" page to provide VIN
-#    Then click on next button and wait till listening got completed
-#    Then Click on the logout button and close the browser
+
+  @VehiclesPage_ProvideVINDeviceDetailsOnVehiclePage
+  Scenario: Provide VIN and other details to install selected device into a Vehicle
+    Given Verify user is on setting tab to provide VIN
+    Then Click on next button and wait till listening got completed
+    Then Click on the logout button and close the browser
 
 
 

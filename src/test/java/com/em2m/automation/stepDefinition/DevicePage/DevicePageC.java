@@ -1,5 +1,6 @@
 package com.em2m.automation.stepDefinition.DevicePage;
 
+import com.em2m.automation.PageObjects.DevicePage;
 import com.em2m.automation.base.ConfigProperties;
 import com.em2m.automation.base.TestBase;
 import com.em2m.automation.utility.SelenideUtil;
@@ -14,6 +15,9 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
 
 public class DevicePageC extends TestBase {
+
+
+    DevicePage devicePage = new DevicePage();
 
 
     @Given("click on create device")
@@ -42,8 +46,7 @@ public class DevicePageC extends TestBase {
 
     @Given("Search for Device with DeviceId {string} in search text box")
     public void searchForDeviceWithDeviceIdInSearchTextBox(String deviceId) {
-        $(By.xpath(ConfigProperties.getProperty("searchBar"))).setValue(deviceId);
-        $(By.xpath(ConfigProperties.getProperty("searchiconBtn"))).click();
+        devicePage.searchForText(deviceId);
   }
 
     @Then("Open on the Device with DeviceId {string} on search result")
