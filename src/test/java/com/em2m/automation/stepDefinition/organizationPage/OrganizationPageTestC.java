@@ -159,6 +159,9 @@ public class OrganizationPageTestC extends TestBase {
 
     @AfterStep("@OrganizationPage")
     public void takeScreenShotOnFail(Scenario scenario){
+        if(scenario.isFailed()){
+            scenario.attach(helper.getByteScreenshot(), "image/png", "screenshot Name");
+        }
     }
 
     @After("@OrganizationPage")

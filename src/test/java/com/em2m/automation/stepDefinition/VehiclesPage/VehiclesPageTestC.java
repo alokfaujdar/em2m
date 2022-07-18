@@ -7,6 +7,7 @@ import com.em2m.automation.applicationConstansts.TimeConstant;
 import com.em2m.automation.base.ConfigProperties;
 import com.em2m.automation.base.TestBase;
 import com.em2m.automation.stepDefinition.loginPage.LoginPageTestC;
+import com.em2m.automation.utility.GeneralHelper;
 import com.em2m.automation.utility.SelenideUtil;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
@@ -23,6 +24,7 @@ public class VehiclesPageTestC extends TestBase {
     Header header = new Header();
     HomePage homePage = new HomePage();
     VehiclesPage vehiclesPage = new VehiclesPage();
+    GeneralHelper helper = new GeneralHelper();
 
     @Then("After login user is on {string} page")
     public void afterLoginUserIsAlreadyOnVehiclesPage(String pageNameHeader) {
@@ -84,6 +86,9 @@ public class VehiclesPageTestC extends TestBase {
 
     @AfterStep("@VehiclesPage")
     public void takeScreenShotOnFail(Scenario scenario){
+        if(scenario.isFailed()){
+            scenario.attach(helper.getByteScreenshot(), "image/png", "screenshot Name");
+        }
     }
 
 

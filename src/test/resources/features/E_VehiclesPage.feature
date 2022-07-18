@@ -24,6 +24,7 @@ Feature: Vehicles Page Test
     Given Verify user is on setting tab to provide VIN
     Then Click on next button and wait till listening got completed
     Then Click on the logout button and close the browser
+    Then Logout
 
 
 
