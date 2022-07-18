@@ -10,9 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-
 import java.time.Duration;
-
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.closeWindow;
 
@@ -41,15 +39,15 @@ public class TestBase {
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions options = new FirefoxOptions();
                 options.setHeadless(isHeadless);
-                this.webDriver = new FirefoxDriver();
+                webDriver = new FirefoxDriver();
             } else if (browser.equalsIgnoreCase("chrome")) {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.setHeadless(isHeadless);
-                this.webDriver = new ChromeDriver();
+                webDriver = new ChromeDriver();
             } else if (browser.equalsIgnoreCase("edge")){
                 WebDriverManager.edgedriver().setup();
-                this.webDriver = new EdgeDriver();
+                webDriver = new EdgeDriver();
             }
             WebDriverRunner.setWebDriver(webDriver);
             webDriver.manage().window().maximize();

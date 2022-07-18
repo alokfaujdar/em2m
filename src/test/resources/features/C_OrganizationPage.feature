@@ -34,6 +34,7 @@ Scenario: Scenario_01 Create standard dealership organization
   Then Verify preview
   Then Click complete
   Then Verify popup "Organization created Demo Std Customer"
+  Then Logout
 
 @OrganizationPage_CreateBasicOrganization
 Scenario: Scenario_02 Create basic organization
@@ -51,8 +52,9 @@ Scenario: Scenario_02 Create basic organization
   Then Verify preview
   Then Click complete
   Then Verify popup "Organization created Demo Basic Customer"
+  Then Logout
 
-@OrganizationPage_UpdateOrganization
+  @OrganizationPage_UpdateOrganization
 Scenario: Scenario_03 Update organization
   Given Verify User is on login page
   Then User attempt to login
@@ -68,6 +70,7 @@ Scenario: Scenario_03 Update organization
   Then Verify PopUp message appear
   Then Verify PopUp message disappear
   Then verify the updated name and description
+  Then Logout
 
 
 
