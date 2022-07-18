@@ -50,4 +50,16 @@ public class CommonMethods {
         }
     }
 
+    public void selectFromTableGrid(String rowNumber, String columnNumber){
+        String xpath = ConfigProperties.getProperty("genericTableColumn").replace("%Row%",rowNumber).replace("%Column%",columnNumber);
+        try{
+            SelenideUtil.click(xpath);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void elemetnAppears() {
+
+    }
 }

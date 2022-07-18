@@ -1,6 +1,7 @@
 package com.em2m.automation.stepDefinition.organizationPage;
 
 import com.em2m.automation.PageObjects.OrganizationPage;
+import com.em2m.automation.applicationConstansts.TimeConstant;
 import com.em2m.automation.base.ConfigProperties;
 import com.em2m.automation.base.TestBase;
 import com.em2m.automation.utility.CommonMethods;
@@ -13,7 +14,6 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 
 import java.util.List;
 import java.util.Map;
@@ -26,14 +26,12 @@ public class OrganizationPageTestC extends TestBase {
     private String organizationTemplate, organizationCustomerName, organizationDescription, organizationTimeZone,
                    organizationType, organizationAdminFirstName, organizationAdminLastName, organizationAdminEmail, organizationAdminPhoneNumber;
     private List<String> organizationProducts;
+    private String updateName, updateDescription;
 
     public static OrganizationPage organizationPage = page(OrganizationPage.class);
     public static GeneralHelper helper = new GeneralHelper();
     CommonMethods commonMethods = new CommonMethods();
 
-    @Given("User is organization page")
-    public void userIsOrganizationPage() {
-    }
 
     @When("Click on Create Organization button")
     public void clickOnCreateOrganizationButton() {
@@ -115,39 +113,57 @@ public class OrganizationPageTestC extends TestBase {
         commonMethods.verifyPopUp(ConfigProperties.getProperty("popup_createUpdateAlert"),expectedMessage);
     }
 
-    @When("First organization is selected")
-    public void firstOrganizationIsSelected() {
+    @When("Select Row {string} and Column {string} from organization table grid")
+    public void selectRowAndColumnFromOrganizationTableGrid(String rowNumber, String columnNumber) {
+        commonMethods.selectFromTableGrid("1","2");
+
     }
 
     @Then("Update name to random name")
     public void updateNameToRandomName() {
+        updateName="Demo Name"+helper.getRandomAlphaNumericString(5);
+        SelenideUtil.isVisible(ConfigProperties.getProperty("btn_edit"), TimeConstant.WAIT_MEDIUM);
+        organizationPage.setNameInSettings(updateName);
      }
 
     @Then("Click RENAME ORGANIZATION button")
     public void clickRENAMEORGANIZATIONButton() {
+        organizationPage.clickRenameOrganization();
      }
 
     @Then("Update description to random description")
     public void updateDescriptionToRandomDescription() {
+        updateDescription="Demo Description"+helper.getRandomAlphaNumericString(5);
+        organizationPage.setDescriptionInSettings(updateDescription);
      }
 
     @Then("Click {string} UPDATE button")
     public void clickUPDATEButton(String section) {
+        organizationPage.clickUpdateInSettings(section);
      }
 
     @Then("verify the updated name and description")
     public void verifyTheUpdatedNameAndDescription() {
+        organizationPage.verifyDetailsUpdatSucessfully(updateName,updateDescription);
      }
 
-    @When("Check the visibility of create organization button")
-    public void checkTheVisibilityOfCreateOrganizationButton() {
-      }
+    @Then("Verify PopUp message appear")
+    public void verifyPopUpMessageAppear() {
+        organizationPage.checkPopUpAppears();
+    }
+
+    @Then("Verify PopUp message disappear")
+    public void verifyPopUpMessageDisappear() {
+        organizationPage.checkPopUpDisappears();
+    }
 
     @AfterStep("@OrganizationPage")
     public void takeScreenShotOnFail(Scenario scenario){
-     }
+    }
 
     @After("@OrganizationPage")
     public void closeTheBrowser(){
-      }
+    }
+
+
 }

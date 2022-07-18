@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -88,7 +89,6 @@ public class OrganizationPage {
         $(By.xpath(typeLocator)).click();
     }
 
-
     public void clickAddTimezone() {
         try{
             SelenideUtil.click(ConfigProperties.getProperty("txtfld_timeZone"));
@@ -96,7 +96,6 @@ public class OrganizationPage {
             e.printStackTrace();
         }
     }
-
 
     public void checkCreateAdminAccount() {
         SelenideElement createAdminAccountCheckBox=$(ConfigProperties.getProperty("chbx_createAdminAccount"));
@@ -106,21 +105,17 @@ public class OrganizationPage {
         }
     }
 
-
     public void setAdminFirstName(String firstName) {
         SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_adminFirstName"),firstName );
     }
-
 
     public void setAdminLatsName(String lastName) {
         SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_adminLastName"),lastName );
     }
 
-
     public void setAdminEmail(String email) {
         SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_adminEmail"),email );
     }
-
 
     public void setAdminPhoneNo(String phoneNo) {
         SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_adminPhoneNo"),phoneNo );
@@ -210,61 +205,73 @@ public class OrganizationPage {
         }
     }
 
-
     public String getTemplatePreview() {
         return SelenideUtil.getText(ConfigProperties.getProperty("pnl_templateReview"));
     }
-
 
     public String getOrganizationDetailsPreview() {
         return SelenideUtil.getText(ConfigProperties.getProperty("pnl_organizationDetails"));
     }
 
-
     public String getProductsPreview() {
         return SelenideUtil.getText(ConfigProperties.getProperty("pnl_products"));
     }
-
 
     public String getAdministratorAccountPreview() {
         return SelenideUtil.getText(ConfigProperties.getProperty("pnl_administratorAccount"));
 
     }
 
-
     public void clickComplete() {
         SelenideUtil.click(ConfigProperties.getProperty("btn_complete"));
     }
-
 
     public void setNameInSettings(String name) {
         SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_name"),name );
 
     }
 
-
     public void setDescriptionInSettings(String description) {
         SelenideUtil.sendKeys(ConfigProperties.getProperty("txt_description"),description );
     }
-
 
     public void clickUpdateInSettings(String sectionName) {
         $(By.xpath("//span[contains(text(),'"+sectionName+"')]/../..//span[contains(text(),'Update')]")).click();
     }
 
-
     public void clickRenameOrganization() {
         SelenideUtil.click(ConfigProperties.getProperty("btn_renameOrganization"));
     }
-
 
     public String getNameFromSettings() {
         return SelenideUtil.getValue(ConfigProperties.getProperty("txt_name"));
     }
 
-
     public String getDescriptionFromSettings() {
         return  SelenideUtil.getValue(ConfigProperties.getProperty("txt_description"));
+    }
+
+    public void checkPopUpAppears() {
+        SelenideUtil.isVisible(ConfigProperties.getProperty("popup_createUpdateAlert"));
+    }
+
+    public void checkPopUpDisappears() {
+        $(SelenideUtil.getLocator(ConfigProperties.getProperty("popup_createUpdateAlert"))).shouldBe(Condition.disappear, Duration.ofMillis(TimeConstant.WAIT_MEDIUM));
+    }
+
+    public void verifyDetailsUpdatSucessfully(String updateName,String updateDescription) {
+        if(getNameFromSettings().equals(updateName)){
+            logger.info("Organization name got updated successfully to: "+updateName);
+        }
+        else {
+            logger.error("Failed to edit the organization's name");
+        }
+        if(getDescriptionFromSettings().equals(updateDescription)){
+            logger.info("Organization description got updated successfully to: "+updateDescription);
+        }
+        else {
+            logger.error("Failed to edit the organization's description");
+        }
     }
 
 
